@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>-
+
+
+<html lang="en  ">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<title>SearchEat</title>
+		 <link rel="stylesheet" type="test/css" href="/static/css.css">
+
+	</head>
+	<body background="/static/fondo.png">
+
+		<div id="general">
+			<div id="busqueda">
+				
+				<img src="/static/logo.png"  ><br>	
+				<form action="." action = "acerca" method="GET">
+					<input type="text" id="input" name="input" value="{{aux}}" >
+					<br>
+					<input type="submit" id="button" value="Buscar" >
+					<input type="button" id="linkacerca" onclick=" window.location.href='acerca'" value="Acerca de SearchEat">
+				</form>
+			</div>
+		<section class="container">
+		    {% if num2 > 0 %}
+			<br>
+			<h2>{{num}} Resultados relacionados con {{query}}</h2>
+			{% endif %}
+
+			<div id="lista1">
+				<br>
+				<ul >
+					{%for res in receta %}
+						<li > <a href={{res.url}}>{{res.nombre}}</a></li>
+					{% endfor %}
+				</ul>
+
+			</div>
+		</section>
+		</div>
+
+	</body>
+
+</html>
